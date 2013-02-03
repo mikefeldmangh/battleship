@@ -9,10 +9,11 @@ development:
   reconnect: false
   database: battleship_development
   pool: 5
-  host: localhost
+  host: 127.0.0.1
   username: root
-  password:
-  socket: /var/run/mysqld/mysqld.sock
+  password: sqladminpass
+#  socket: /var/run/mysqld/mysqld.sock
+  socket: /tmp/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -23,10 +24,10 @@ test:
   reconnect: false
   database: battleship_test
   pool: 5
-  host: localhost
+  host: 127.0.0.1
   username: root
-  password:
-  socket: /var/run/mysqld/mysqld.sock
+  password: sqladminpass
+  socket: /tmp/mysqld.sock
 
 production:
   adapter: mysql2

@@ -17,7 +17,8 @@ class GamesController < ApplicationController
   def join
     if params[:user] && params[:board]
       user = User.find_or_create_by_name(params[:user])
-      game = Game.join_game(user, JSON.parse(params[:board]))
+      game = Game.join_game(user, params[:board])
+      # game = Game.join_game(user, JSON.parse(params[:board]))
       if game
         render :json => { :game_id => game.id }
       else

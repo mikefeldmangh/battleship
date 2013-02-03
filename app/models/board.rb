@@ -11,8 +11,8 @@ class Board < ActiveRecord::Base
 
   def build_cells(raw_board)
     raw_board.zip(1..10).each do |row, i|
-      row.zip('A'..'J').each do |cell, j|
-        ship = (cell != '' ? cell : nil)
+      row[1].zip('A'..'J').each do |cell, j|
+        ship = (cell[1] != '' ? cell[1] : nil)
         cells.create(:ship => ship, :location => "#{j}#{i}")
       end
     end
